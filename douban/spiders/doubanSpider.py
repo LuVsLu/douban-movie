@@ -31,9 +31,9 @@ class DoubanSpider(CrawlSpider):
     login_url = "https://accounts.douban.com/login?source=movie"
 
     cookie_jar = CookieJar()    #跟踪cookie
-    page_num = 1      #爬取"热门电影"列表的页数
-    page_limit = 20   #爬取"热门电影"列表每页包含的电影数
-    time_sleep = 8    #爬取评论的时间间隔,单位s
+    page_num = 10     #爬取"热门电影"列表的页数
+    page_limit = 50   #爬取"热门电影"列表每页包含的电影数
+    time_sleep = 2    #爬取评论的时间间隔,单位s
 
     #伪造请求头
     headers = {
@@ -51,8 +51,8 @@ class DoubanSpider(CrawlSpider):
     formdict = {
                 'source':'movie',
                 'redir':'https://movie.douban.com/',
-                'form_email':'763976651@qq.com',
-                'form_password':'qian13700522530'
+                'form_email':'',
+                'form_password':''
             }
 
     #伪造请求"热门电影"列表的query
